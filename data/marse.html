@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function bodyload(){
+            var apiMars;
+
+            let http = new XMLHttpRequest();
+            http.open("get", "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY", true)
+            http.send()
+
+            http.onreadystatechange = function(){
+                if(http.readyState === 4){
+                    apiMars = JSON.parse(http.responseText);
+                    console.log(apiMars)
+                    apiMars.photos.map(function(item){
+                        console.log(item)
+                        var tr = document.createElement("tr");
+                        var Id_td = document.createElement("td");
+                        var Prev_td = document.createElement("td");
+                        var cam_td = document.createElement("td");
+                        var rover_td = document.createElement("td");
+
+                        Id_td.innerHTML = item.id;
+                        Prev_td.innerHTML = `<a href=${item.img_src}><img src=${item.img_src} width="100" height="100"><a>`
+                        cam_td.innerHTML = item.camera.full_name;
+                        rover_td.innerHTML = item.rover.name;
+                        console.log(Prev_td)
+
+                        tr.appendChild(Id_td);
+                        tr.appendChild(Prev_td);
+                        tr.appendChild(cam_td);
+                        tr.appendChild(rover_td);
+
+                        document.querySelector("tbody").appendChild(tr);
+                    })
+                }
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <h2 class="text-center">Marse Photos</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="bi bi-person-fill"> Photo Id</th>
+                <th class="bi bi-pin-fill"> Preview</th>
+                <th class="bi bi-camera-fill"> Camera</th>
+                <th class="bi bi-rocket-fill"> Rover</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

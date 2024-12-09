@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ============Location
+        // document.write(`
+        //     ServerName / IP Address: ${(location.host)}<br>
+        //     Port Number: ${(location.port)} <br>
+        //     Protocol: ${(location.protocol === "http:")?"You are using Server":"Please load webpage server only "} <br>
+        //     Location : ${(location.href)}
+        // `)
+
+        // ==========Navigator
+
+        // document.write(`
+        //     Browser Family : ${(navigator.appCodeName)}<br>
+        //     Plateform: ${(navigator.window === "win32")?"Download for Windows":"Download for other OS Window"}<br>
+        //     Reginoal Language: ${(navigator.language)}<br>
+        //     Version: ${(navigator.appVersion)}<br>
+        //     Cookies: ${navigator.cookieEnabled}
+        // `)
+
+        // ============ Lonetude/ Latitude
+
+            // navigator.geolocation.getCurrentPosition((position=>{
+            //     document.write(`
+            //         Logitude: ${(position.coords.longitude)}<br>
+            //         Latitude: ${(position.coords.latitude)}
+            //     `)
+            // }))
+
+        // ============= Plugin
+
+        // for(var plugin of navigator.plugins){
+        //     document.write(plugin.name+"<br>")
+        // }
+        // if(navigator.plugins['PDF Plugin']){
+        //     document.write('You Can Watch PDF Documents')
+        // }else{
+        //     alert('Please Install PDF Plugin in your browser')
+        //     location.href = 'https://www.adobe.com/downloads&quot';
+        // }
+
+        // HISTORY ============
+
+        if(history.length > 3){
+            alert('Please Ragister for more..')
+            location.href = './login.html'
+        }else{
+            document.write('You can watch max3 pages for free')
+        }
+        
+    </script>
+</head>
+<body>
+    <noscript>Check JavaScript Status</noscript>
+</body>
+</html>

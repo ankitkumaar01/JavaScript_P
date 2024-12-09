@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyUser(e){
+            var userid = document.getElementById("txtUser").value;
+            var lblError = document.getElementById("lblError");
+            fetch("User.json")
+            .then(response => response.json())
+            .then(Users =>{
+                for(var user of Users){
+                    if(user.UserId === userid){
+                        lblError.innerHTML = "User Id Taken - Try another Id".fontcolor("red")
+                        break;
+                    }else{
+                        lblError.innerHTML = "User Id Available".fontcolor("green")
+                    }
+                }
+            })
+        }
+
+        function VerifyCaps(e){
+            var PasswordError = document.getElementById("PasswordError");
+            if(e.which >= 65 && e.which <= 90){
+                PasswordError.style.display = "block"
+                PasswordError.style.color = "gold";
+            }else{
+                PasswordError.style.display = "none"
+            }
+        }
+    </script>
+</head>
+<body class="container">
+    <h3>Ragister User</h3>
+    <dl>
+        <dt>User Id</dt>
+        <dd><input type="text" onkeyup="VerifyUser(event)" id="txtUser"></dd>
+        <dd id="lblError"></dd>
+        <dt>Password</dt>
+        <dd><input type="text" onkeypress="VerifyCaps(event)" id="txtPwd"></dd>
+        <dd id="PasswordError" style="display: none;">
+            <span class="bi bi-exclamation-triangle-fill">Warning: Caps ON</span>
+        </dd>
+    </dl>
+</body>
+</html>

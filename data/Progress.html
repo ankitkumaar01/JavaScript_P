@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Projects</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var flag;
+        function LoadClick(){
+            document.getElementById("loadBtn").style.display = "none";
+            document.getElementById("progressContainer").style.display = "block";
+            flag = setInterval(StartProgress, 100)
+        }
+        var count = 1;
+        function StartProgress(){
+            count++;
+            document.querySelector("progress").value = count;
+            document.getElementById("lblStatus").innerHTML = `${count} % Completed..!`;
+
+            if(count === 100){
+                document.getElementById('progressContainer').style.display = "none";
+                document.getElementById("PicContainer").style.display = "block";
+                document.querySelector("img").style.animationName = "Fade";
+                document.querySelector("img").style.animationDuration = "5s";
+                // console.log(count)
+            }
+            
+        }
+        
+
+        function pauseClick(){
+            clearInterval(flag);
+            document.getElementById("lblStatus").innerHTML = `${count} % Completed..`;
+            
+        }
+        function playClick(){
+            flag = setInterval(StartProgress, 100)
+            document.getElementById("lblStatus").innerHTML = `${count} % Completed..`
+        }
+    </script>
+    <style>
+        @keyframes Fade{
+            from{
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center bg-dark-subtle text-white" style="height: 100vh;">
+    <div class="div">
+        <div class="text-center">
+            <div class="my-2" id="loadBtn">
+                <button onclick="LoadClick()" class="btn btn-warning">Load Image</button>
+            </div>
+            <div id="progressContainer" style="display: none;">
+                <progress class="progress" value="1" min="1" max="100" style=" width: 300px;"></progress>
+                <div class="text-dark-emphasis" id="lblStatus"></div>
+                <div class="my-2">
+                    <button onclick="pauseClick()" class="btn btn-info"><span class="bi bi-pause "></span></button>
+                    <button onclick="playClick()" class="btn btn-primary"><span class="bi bi-play"></span></button>
+                </div>
+            </div>
+            <div id="PicContainer" style="display: none;">
+                <img src="../Img/shoes2.jpg" height="350" width="300">
+            </div>
+        </div>     
+    </div>
+</body>
+</html>

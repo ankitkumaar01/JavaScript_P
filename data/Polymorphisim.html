@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class empolyees {
+            firstName;
+            lastName;
+            Desigation;
+            print(){
+                document.write(`${this.firstName} ${this.lastName} - ${this.Desigation}`)
+            }
+        }
+        class Developer extends empolyees{
+            firstName = "Jhon";
+            lastName = "Doe";
+            Desigation = "Developer";
+            Role = "Developer Role - Debug, Test"
+            print(){
+                document.write(`${this.Role}`)
+            }
+        }
+        class Admin extends empolyees{
+            firstName = "Herry";
+            lastName = "Poter";
+            Desigation = "Admin";
+            Role = "Admin Role- Authoragtion";
+            print(){
+                document.write(`${this.Role}`)
+            }
+        }
+        class Maneger extends empolyees{
+            firstName = "Devid";
+            lastName = "Warner";
+            Desigation = "Maneger";
+            Role = "Maneger Role - Management";
+            print(){
+                document.write(`${this.Role}`)
+            }
+        }
+
+        let Empolyees = new Array(new Developer(), new Admin(), new Maneger());
+
+        let desigation = prompt("Enter the Desigation");
+
+        for(let empolyee of Empolyees){
+            if(empolyee.Desigation === desigation){
+                empolyee.print();
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var hello = userName => `Hello! ${userName}`;
+        // var addition = (a, b) => a * b;
+        // console.log(hello("Jhon Doe"))
+        // console.log(addition(5,4))
+
+        // +++++++++++++++++++++++++++
+        // JSON FUNCTION IN NORMAL FUNCTION 
+        // fetch("https://fakestoreapi.com/products")
+        // .then(function(response){
+        //     return response.json();
+        // })
+        // .then(function(products){
+        //     products.map(function(product){
+        //         document.write(`<li>${product.title}</li>`)
+        //     })
+        // })
+
+        // =============JSON FILE WITH ARROW FUNCTION
+
+        // fetch("https://fakestoreapi.com/products")
+        // .then(response => response.json())
+        // .then(products => {
+        //     products.map(product =>{
+        //         document.write(`<li>${product.title}</li>`);
+        //     })
+        // })
+
+        // ++++++++++++++++++++++++++++++++
+
+        // var products = [
+        //     {Name: "Tv", Category:"Electronic"},
+        //     {Name: "Moblie", Category:"Electronic"},
+        //     {Name: "Iron", Category:"Electronic"},
+        //     {Name: "Iphone", Category:"Electronic"}
+        // ]
+
+        // // var electronic = products.filter(function(product){
+        // //     return product.Category === "Electronic";
+        // // })
+        // // console.log(electronic)
+
+        // var electronic = products.filter(product => product.Category === "Electronic");
+        // console.log(electronic)
+
+        // ++++++++++++++++++++++++++++++++
+
+        // var product = class
+        // {
+        //     Name= "LG";
+        //     Price= 39000.54;
+        //     Stock= true;
+        //     cities= ["Banglore", "Delhi"];
+        //     Rating= {Rate:4.9}
+        // }
+
+        // let tv = new product;
+        // document.write(`Name=${tv.Name}<br>Price=${tv.Price}<br>Stock=${tv.Stock}<br>Cities=${tv.cities[1]}<br>Rating= ${tv.Rating.Rate}`)
+
+        // ++++++++++++++++++++++++++++++
+        // var userName = prompt("Enter your Name");
+        // var role = prompt("Enter your role, admin|Customer");
+        // class product{
+        //     _price;
+
+        //     get Price(){
+        //         return this._price;
+        //     }
+        //     set Price(newPrice){
+        //         if(role === "admin" || role === "customer"){
+        //             this._price = newPrice;
+        //         }else{
+        //             document.write(`Hello ${userName} You are not authorized to set price`);
+        //         }
+        //     }
+        // }
+
+        // let obj = new product();
+        // obj.Price = prompt("Enter Project Price");
+        // if(obj.Price){
+        //     document.write(`Product Price is ${obj.Price}`)
+        // }
+
+        // ++++++++++++++++++++++++++++++++
+
+        // class Product{
+        //     Rating = {
+        //         banglore:{
+        //             customer:{
+        //                 Rate: 5.0
+        //             },
+        //             vender:{
+        //                 Rate: 4.5
+        //             }
+        //         }
+                
+        //     }
+        //     get BangVendeerRating(){
+        //      return this.Rating.banglore.vender.Rate;
+        //     }
+        //     set BangVendeerRating(newRating){
+        //         this.Rating.banglore.vender.Rate = newRating;
+        //     }
+        // }
+        // let obj = new Product();
+        // obj.BangVendeerRating = prompt("Enter new rating for Banglore Vender")
+        // document.write(`Banglore Vender Rating ${obj.BangVendeerRating}`)
+
+        // ++++++++++++++++++++ Method ++++++++++++++++++++++++
+
+        class product{
+            Name = "Samsung TV";
+            Price= 5400.04;
+            Qty = 1;
+            Total(){
+                return this.Price * this.Qty;
+            }
+            Print(){
+                document.write(`Name=${this.Name}<br>Price=${this.Price}<br>Qty=${this.Qty}<br>Total=${this.Total()}`)
+            }
+        }
+        let obj = new product();
+        obj.Qty = parseInt(prompt("Enter the Quantity"))
+        obj.Print();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

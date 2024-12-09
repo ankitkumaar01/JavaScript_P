@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+          // write logic to print all product names with rating 4 above
+        //     var items = [
+        //     {Name: "TV", Price : 45000, Rating:{rate:4.2}},
+        //     {Name: "Watch", Price: 2000, Rating:{rate:2.4}},
+        //     {Name: "Mobile", Price: 12000, Rating:{rate:4.6}}
+        // ]
+
+        // items.filter(function(item){
+        //     return item.Price < 42000;
+        // })
+        // .map(function(item){
+        //     document.write(item.Rating.rate + "<br>");
+        // })
+
+
+        // write logic to print total of all products price
+
+        var items = [
+            {Name: "TV", Price : 45000},
+            {Name: "Watch", Price: 2000},
+            {Name: "Mobile", Price: 12000}
+        ]
+
+        var total = 0;
+        items.map(function(item){
+            total+= item.Price;
+            
+        })
+        document.write(total);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function Database(obj,e){
+        //     document.write(`Button Id:${obj.id}<br>Button Value: ${obj.value}<br>X Position: ${e.clientX}<br> CtrlKey: ${e.ctrlKey}`)
+        // }
+
+        // ++++++++++++++++++++++++++++++++++++++
+
+        function Database(val){
+            let msg = ""
+            switch (val)
+            {
+                case "Insert":
+                    document.write("Recorded Installed..")
+                    break;
+                case "Update":
+                    document.write("Updated Successfully..")
+                    break;
+                case "Delete":
+                    document.write("Deleted Successfully..")
+            }
+        }
+        function ImageClick(e){
+            if((e.clientX>= 66 && e.clientX <= 327) && (e.clientY >= 40 && e.clientY<= 80)){
+                document.getElementById("msg").innerHTML = "Burger Price - $30"
+        
+            }
+        
+        }
+        
+    </script>
+</head>
+<body>
+    <img onclick="ImageClick(event)" src="../Img/zingerBox.jpg" width="400" height="400">
+    <p id="msg"></p>
+    <button id="btnInsert" value="Insert" onclick="Database(this,event)" >Insert</button>
+    <button id="btnUpdate" value="Update" onclick="Database(this,event)" >Update</button>
+    <button id="btnDelete" value="Delete" onclick="Database(this,event)" >Delete</button>
+</body>
+</html>

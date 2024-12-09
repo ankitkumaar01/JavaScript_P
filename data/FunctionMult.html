@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // EX------------------------
+        // function Deatalis(id, name, price, stock){
+        //     if(id){
+        //         document.write(`Id=${id}<br>Name=${name}<br>Price=${price}<br>Stock=${stock}`)
+        //     }else{
+        //         document.write(`Id=${id}<br>Name=${name}<br>Price=${price}<br>Stock=${stock}`)
+        //     }
+        // }
+        // Deatalis(1, 'LG', 500000, true);
+
+        // EX--------------------------
+        
+        // function Details(title, ...product){
+        //     var [id, name, price, stock, quality] = product;
+
+        //     document.write(`<h2>${title}</h2><br> Id=${id}<br>Name=${name}<br>Price=${price}<br>Stock=${stock} <br>Quality=${quality}`)
+        // }
+        // Details('Products Details', 11, 'Samsung', 40000, false, "fiveStar");
+
+        // EX-------------------------
+        // Rest Parameter
+
+        // function multiplication(a, b){
+        //     return a*b;
+        // }
+        // function result(){
+        //     document.write(`Multiplication= ${multiplication(6,5)}`)
+        // }
+        // result();
+
+        // Ex -----------------------
+        // Spread Operatorś
+
+        // function Name(id, name, price, stock){
+
+        // }
+        // var data = [4, "Jhon"]
+        // // Name(data)
+        // console.log(Name(...data))
+
+        // Ex ---------------------
+
+        // function Details(id, name, stock, price){
+        //     document.write(`Id=${id}<br>Name=${name}<br>Stock=${stock}<br>Price=${price}`)
+        // }
+        // Details(...[5, "LG", true, 900000.90 ])
+
+        // Ex __________________
+
+        // function Addition(a, b){
+        //     return a+b;
+        // }
+        // function Print(){
+        //     document.write(Addition(4, 5))
+        // }
+        // Print();
+
+        // Ex_---------------------
+
+        // function List(){
+        //     return ["All", "Fashion", "Clothes", "Price"];
+        // }
+        // function Rating(){
+        //     return {Rate: 4.9, Count: 5000}
+        // }
+        // function Print(){
+        //     return  function(){
+        //         document.write(`List=${List().toString()}<br>Rating=${Rating().Rate}, ${Rating().Count}`)
+        //     }
+        // }
+        // Print()()
+
+        // Ex +++++++++++++++++++++
+
+        // function Component(CompoName){
+        //     if(CompoName === "grid"){
+        //         return "<table><tr><td>Name</td></tr></table>";
+        //     } else{
+        //         return "<div>Card</div>"
+        //     }
+        // }
+        // document.write(Component('grid'))
+
+        // Ex-------------------------
+        // Inner and Outer
+
+        // function Outer(){
+        //     var x = 9;
+
+        //     function Inner(){
+        //         var y = 1;
+        //         return x + y;
+        //     }
+        //     document.write(`Addition= ${Inner()}`)
+        // }
+        // Outer()
+
+        // Ex_-------------------
+        // Anonmoyas Function Callback
+
+        function validUsers(password, success, failure){
+            if(password === "pwd"){
+                success()
+            }else{
+                failure()
+            }
+        }
+        validUsers(prompt("Enter the Password"),function(){
+            document.write("Login Success")
+        },
+        function(){
+            document.write("Invalid Password")
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

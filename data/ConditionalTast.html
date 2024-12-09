@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // +++++++++++++++ Task-1
+        // var str = "Welcome To Him Himalaya";
+        // var count = 0;
+        // for(var i= 0; i<str.length; i++){
+        //     if(str[i] === "H"){
+        //         count++;
+        //     }
+        // }
+        // document.write("H Occurred "+ count + " times");
+
+        // ++++++++++++++ Task-2
+        // write a program to find total count of vowels in the given string.
+
+        // var str = "Welcome to javascript";
+        // var count = 0
+        // for(var i = 0; i<str.length; i++){
+        //     if(str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u"){
+        //         count++;
+        //     }
+        // }
+        // document.write(`Total vowel is ${count}`)
+
+        // +++++++++++++ Task-3
+        // write a program to find if the given word is palindrome
+
+        // function findPalindrome(word){
+        //     const lowerWord = word.toLowerCase();
+        //     const reverseWord = lowerWord.split('').reverse().join('');
+        //     console.log(reverseWord)
+        //     if(lowerWord === reverseWord){
+        //         document.write(`${word} is Palindrome`);
+        //     }else{
+        //         document.write(`${word} is Not Palindrome`)
+        //     }
+
+        // }
+        //  findPalindrome("Noon")
+
+        // ++++++++++++++++ Task- 4
+        // Nasted Loop
+
+        // var values = [[10, 20, 30, 40], [50, 60, 70, 80]];
+        // for(var i = 0; i<values.length; i++){
+        //     for(var j = 0; j<values[i].length; j++){
+        //         document.write(values[i][j] + "&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br><br>")
+        // }
+
+        // +++++++++++++++++ Task - 5
+        // Write a program to print triangle of stars.
+
+        // function PrintCount(count){
+        //     for(var i=1; i<= count; i++){
+        //         for(var j=1; j<=i; j++){
+        //             document.write("* &nbsp; &nbsp;");
+        //         }
+        //         document.write("<br>")
+        //     }
+            
+        // }
+        // PrintCount(20);
+
+        // +++++++++++++++++ Task - 6
+        // Write a program to print multiplication table for any number.
+
+        // function PrintTable(num){
+        //     for(var i= 1; i<=10; i++){
+        //         document.write(`${num} X ${i} = ${num*i} <br>`)
+        //     }
+        // }
+        // PrintTable(parseInt(prompt("Enter the Number")));
+
+        // Task - 8
+        // Write a program to print factorial of given number?
+
+        // function FindFactorial(num){
+        //     var fact = 1;
+        //     for(var i= 1; i<=num; i++){
+        //         fact*= i;
+        //     }
+        //     document.write(`Factorial of ${num} is value ${fact}`);
+        //     console.log(fact)
+        // }
+        // FindFactorial(5);
+
+        // EX ------------------
+
+        // var menu = [
+        //     {Category: "Clothes", Products:["Shirt", "Coat"]},
+        //     {Category: "Cars", Products:["BMW", "THAR"]}
+        // ]
+
+        // function bodyload(){
+        //     for(var i=0; i<menu.length; i++){
+        //         var ol_li = document.createElement("li");
+        //         ol_li.innerHTML = menu[i].Category;
+        //         var ul = document.createElement("ul");
+        //         var ol = document.createElement("ol")
+
+        //         for(var j= 0; j< menu[i].Products.length; j++){
+        //             var ul_li = document.createElement("li");
+        //             ul_li.innerHTML = menu[i].Products[j];
+        //             ul.appendChild(ul_li);
+        //             ol.appendChild(ul);
+        //             document.querySelector("ol").appendChild(ol_li);
+        //         }
+        //     }
+        // }
+
+        // EX --------------------
+
+        // for(var i = 1; i<=9; i++){
+        //     if(i == 5|| i== 12){
+        //         continue
+        //     }
+        //     document.write(i + "<br>")
+        // }
+
+        // EX----------------------
+
+        // fetch("https://fakestoreapi.com/products")
+        // .then(function(response){
+        //     return response.json();
+        // })
+        // .then(function(products){
+    
+        //     for(var i = 0; i< products.length; i++){
+        //         if(products[i].category === "jewelery" || products[i].category === "men's clothing"){
+        //             continue;
+        //         }
+        //         document.write(`${products[i].title} [<b>${products[i].category}</b>] <br>`)
+        //     }
+        // })
+
+        // Ex ------------------------
+        // While and Do While 
+
+        var i = 1;
+        do{
+            document.write(i + "<br>")
+            i++;
+        }while(i <=15);
+    </script>
+</head>
+<body onload="bodyload()">
+    <ol>
+
+    </ol>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function volOne(){
+            document.querySelector("h1").innerHTML = "Volume 10%";
+        }
+        function volTwo(){
+            document.querySelector("h1").innerHTML = "Volume 50%";
+        }
+        function volThree(){
+            document.querySelector("h1").innerHTML = "Volume 100%"
+        }
+
+        var vol1, vol2, vol3;
+        function PluseClick(){
+            vol1 = setTimeout(volOne, 2000);
+            vol2 = setTimeout(volTwo, 6000);
+            vol3 = setTimeout(volThree, 12000);
+        }
+        function CancelClick(){
+
+            clearTimeout(vol2);
+            // volThree();
+        }
+        //  +++++++++++++++++ SetInterval
+
+        function Timer(){
+            var now = new Date();
+
+            document.querySelector("p").innerHTML = now.toLocaleTimeString();
+        }
+
+        function bodyload(){
+            setInterval(Timer, 4000)
+        }
+    </script>
+</head>
+<body onload="bodyload()" class="container bg-dark text-white">
+    <div class=" mt-3 text-center">
+        <button class="btn btn-success" onclick="PluseClick()"><span class="bi bi-plus-circle-fill"></span> Volume</button>
+        <button class="btn btn-danger" onclick="CancelClick()"><span class="bi bi-x-circle-fill "></span> Cancel 50%</button>
+        <h1 align="center" class="my-2"></h1>
+    </div>
+    <div align="center">
+        <p></p>
+    </div>
+</body>
+</html>

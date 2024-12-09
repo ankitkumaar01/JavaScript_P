@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Folder Create</title>
+    <script>
+        function CreateClick(){
+            folderName = prompt("Enter your name");
+                if(folderName == ""){
+                    alert("Folder name can't be empty...");
+                }
+                else if(folderName == null){
+                    alert("Actions Cancled..")
+                }
+                else{
+                    document.querySelector("p").innerHTML += "Folder Created: " + folderName + "<br>" ;
+                }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="CreateClick()">Create Folder</button>
+    <p></p>
+</body>
+</html>

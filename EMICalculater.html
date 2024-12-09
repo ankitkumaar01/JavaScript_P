@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI CALCULATOR</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function AmountChange(){
+            document.getElementById("txtAmount").value = document.getElementById("rangeAmount").value;
+        }
+
+        function YearChange(){
+            document.getElementById("txtYear").value = document.getElementById("rangeYear").value;
+        }
+        
+        function RateChange(){
+            document.getElementById("txtRate").value = document.getElementById("rangeRate").value;
+        }
+
+        function CalculateClick(){
+            var P = parseInt(document.getElementById("txtAmount").value);
+            var N = parseInt(document.getElementById("txtYear").value)*12;
+            var R = parseFloat(document.getElementById("txtRate").value)/12/100;
+            var EMI = P * R *(Math.pow(1 + R,N)) / (Math.pow(1 + R,N)-1);
+
+            document.getElementById("lblEMI").innerHTML = `Your Monthly Installment Is ${EMI.toLocaleString('en-in',{style:"currency", currency:"INR"})} For Next ${N} Months.`
+        }
+
+    </script>
+</head>
+<body class="container-fluid bg-secondary">
+    <div class="bg-light p-3 m-3">
+        <div class="h4 text-center">Personal Loan EMI Calculator</div>
+        <div class="row my-4">
+            <div class="col text-center">
+                Amount You Need <input type="text" id="txtAmount" size="16">
+            </div>
+            <div class="col text-center">
+                For <input type="text" size="2" id="txtYear"> Years
+            </div>
+            <div class="col text-center">
+                Interest Rate <input type="text" id="txtRate" size="2"> %
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col">
+                <input type="range" onchange="AmountChange()" class="form-range" id="rangeAmount" value="100000" min="100000" max="1000000">
+                <span>&#8377; 1,00,000</span>
+                <span class="float-end">&#8377; 10,00,000</span>
+            </div>
+
+            <div class="col">
+                <input type="range" onchange="YearChange()" class="form-range" id="rangeYear" value="1" min="1" max="5">
+                <span>1</span>
+                <span class="float-end">5</span>
+            </div>
+
+            <div class="col">
+                <input type="range" onchange="RateChange()" class="form-range" id="rangeRate" value="8.45" min="8.45" max="14.45" step="0.01">
+                <span>8.45%</span>
+                <span class="float-end">14.45%</span>
+            </div>
+
+            <div class="row my-5">
+                <div class="col text-end">
+                    <button onclick="CalculateClick()" class="btn btn-warning">CALCULATOR</button>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="text-center fs-4" id="lblEMI">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

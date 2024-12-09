@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function sessionEnd(){
+        //     alert('Your session TimeOut - Re-Login Please');
+        //     sessionStorage.removeItem = ("username");
+        //     location.href = "login.html";
+        // }
+
+        function bodyload(){
+            if(localStorage.getItem('username') === null){
+                location.href = './login.html'
+            }else{
+                document.getElementById("User").innerHTML = localStorage.getItem("username");
+                // setTimeout(sessionEnd, 10000);
+            }
+        }
+
+        function singOutClick(){
+            localStorage.removeItem("username");
+            location.href = './login.html'
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h1>Hello! Welcome to India <span id="User"></span> <button onclick="singOutClick()">Sing Out</button> </h1>
+</body>
+</html>

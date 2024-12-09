@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login User</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function LoginClick(){
+            var LoginName = document.getElementById("txtUser").value;
+            var Password = document.getElementById("txtPassword").value;
+            var msg = document.getElementById("msg");
+
+            if(LoginName === ""){
+                msg.innerHTML = "Login Name Required".fontcolor("blue");
+                console.log(LoginName)
+            }else{
+                if(LoginName === "ankit.kr"){
+                    if(Password === ""){
+                        msg.innerHTML = "Password Required".fontcolor("red");
+                    }else{
+                        if(Password === "1234"){
+                            document.write("<h1>Login succesfull</h1>".fontcolor("green"))
+                            
+                        }else{
+                            msg.innerHTML = "Invalid Password".fontcolor("red");
+                        }
+                        
+                    }
+                }else{
+                    msg.innerHTML = "Invalid User".fontcolor("red");
+                }
+            }
+        }
+    </script>
+</head>
+<body class="container w-25 mt-4">
+    <h3 class="text-center mt-5">User Login</h3>
+    <dl class="form">
+        <dt>User Name</dt>
+        <dd><input type="text" id="txtUser" class="form-control"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="txtPassword" class="form-control"></dd>
+    </dl>
+    <button onclick="LoginClick()" class="btn btn-warning w-100">Login</button>
+    <p align="center" id="msg"></p>
+</body>
+</html>

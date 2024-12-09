@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manupulations</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function ApplyClick(){
+            var size = document.getElementById("txtFont").value;
+            var color = document.getElementById("txtColor").value;
+            var style = document.getElementById("1stStyle").value;
+
+            document.getElementById("msgSamp");
+
+            msgSamp.innerHTML = "Sample Text".fontcolor(color).fontsize(size);
+
+            if(style == 'Bold'){
+                msgSamp.innerHTML = "Simple Text".fontsize(size).fontcolor(color).bold();
+            }else {
+                msgSamp.innerHTML = "Simple Text".fontsize(size).fontcolor(color).italics();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-3">
+        <dl>
+            <dt>Font Size</dt>
+            <dd><input type="number" min="1" max="20" value="3" id="txtFont"></dd>
+            <dt>Font Color</dt>
+            <dd><input type="color" id="txtColor"></dd>
+            <dt>Font Style</dt>
+            <dd>
+                <select id="1stStyle">
+                    <option>Select One</option>
+                    <option>Italic</option>
+                    <option>Bold</option>
+                </select>
+            </dd>
+        </dl>
+
+        <button class="btn btn-warning" onclick="ApplyClick()">Apply</button>
+        <br>
+        <div id="msgSamp" class="pt-3">Sample Text</div>
+    </div>
+</body>
+</html>

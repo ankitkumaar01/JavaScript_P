@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function ChangeClick(){
+          let Button = document.getElementById("changeBtn");
+         let ImgChange = document.getElementById("ImgChange"); 
+
+          ImgChange.src = (ImgChange.src === "http://127.0.0.1:5500/Javascript/Img/shoe1.jpg")?"Img/shoes2.jpg":"Img/shoe1.jpg"
+          console.log(ImgChange.src)
+        }
+        
+    </script>
+</head>
+<body class="container">
+    <div class="mt-4">
+        <img src="Img/shoe1.jpg" height="200" width="200" id="ImgChange">
+    </div>
+    <button class="btn btn-primary mt-2" id="changeBtn" onclick="ChangeClick()">Click ME</button>
+</body>
+</html>

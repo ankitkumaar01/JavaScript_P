@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        button{
+            margin-left: 50px;
+        }
+    </style>
+
+    <script>
+        function ApplyClick(){
+            var count = 0;
+            var CoursesName = "";
+            var totalId  = 0;
+
+            document.querySelector("p").innerHTML = "";
+
+            var courses = document.getElementsByName("course")
+
+            for(var course of courses){
+                if(course.checked){
+                    CoursesName+= course.value + "<br>";
+                    totalId+= parseInt(course.id);
+                    count++;
+                } 
+                
+            }
+            console.log(CoursesName,course)
+
+            document.querySelector("p").innerHTML = "CourseName:<br>" + CoursesName + "Total Course:<br>" + count + "<br>Total Amount:<br>" + totalId;
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li><input type="checkbox"  id="3000" onchange="ApplyClick()" name="course" value="CSS"><label>CSS</label></li>
+        <li><input type="checkbox"  id="4000" onchange="ApplyClick()" name="course" value="HTML"><label>HTML</label></li>
+        <li><input type="checkbox"  id="32000" onchange="ApplyClick()" name="course" value="Java"><label>Java</label></li>
+        <li><input type="checkbox"  id="6000" onchange="ApplyClick()" name="course" value="Python"><label>Python</label></li>
+    </ul>
+
+    <button onclick="ApplyClick()">Apply</button>
+    <p></p>
+</body>
+</html>

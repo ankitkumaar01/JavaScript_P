@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Practice</title>
+    <script>
+        // Task 1-
+
+        // function findRange(value, min, max){
+        //     if(value >=min && value <= max){
+        //         document.write(`<h1>Your Value ${value} is in the Range of min ${min} to ${max}</h1>`.fontcolor("green"));
+        //     }else{
+        //         document.write(`<h1>Your Value ${value} is not in the Range of min ${min} to ${max}</h1>`.fontcolor("red"));
+        //     }
+        // }
+        // findRange(30, 5, 20);
+
+        // Task - 2
+        // Write a function "findEven" to check if given value is even or odd.
+
+        // function findEven(number){
+        //     if(number%2 === 0){
+        //         document.write(`${number} is Even`);
+        //     }else{
+        //         document.write(`${number} is Odd`);
+        //     }
+        // }
+        // findEven(5);
+
+        // Task- 3
+        // Write a function  findGreatest()  to find the largest among given 2 numbers.
+
+        // function findGreatest(a, b){
+        //     if(a > b){
+        //         document.write(`a=${a} is greater than b=${b}`);
+        //     }else{
+        //         document.write(`b=${b} is greater than a=${a}`);
+        //     }
+        // }
+        // findGreatest(9, 10);
+
+        // Task - 4
+        // write a function to find greatest among 3 number a , b, c.
+
+        // function findGreatest(a, b, c){
+        //     if(a>b && a>c){
+        //         document.write(`A =${a} is greater than B =${b} and C=${c}`);
+        //     }else if(b > c){
+        //         document.write(`B =${b} is greater than A =${a} and C=${c}`);
+        //     }else{
+        //         document.write(`C=${c} is grather than A =${a} and B =${b}`);
+        //     }
+        // }
+
+        // findGreatest(80, 40, 50);
+
+        // Task - 5
+        // write a function to print grade based on marks
+        // Print - 100 - 200 Grade C
+        //         201 - 300 Grade B
+                  // 301 > Grade A
+
+            // function findGrade(mark){
+            //     if(mark >= 100 && mark <= 200){
+            //         document.write(`Your Mark ${mark} with Grade - C`);
+            //     }else if(mark >= 201 && mark <= 300){
+            //         document.write(`Your Mark ${mark} with Grade - B`);
+            //     }else{
+            //         document.write(`Your Mark ${mark} with Grade - A`)
+            //     }
+            // }
+            // findGrade(250);
+            // findGrade(400);
+            // findGrade(125);
+
+        // Task - 6
+        // Check if a triangle is equilateral, scalene, or isosceles
+
+        // function findTringle(slide1, slide2, slide3){
+        //     if(slide1 === slide2 && slide2 === slide3){
+        //         document.write("Equilateral triangle");
+        //     }else if((slide1 === slide2) || (slide2 === slide3) || (slide2 === slide3)){
+        //         document.write("Isosceles triangle");
+        //     }else{
+        //         document.write("Scalene triangle");
+        //     }
+        // }
+        // findTringle(12, 12, 12);
+        // findTringle(12, 12, 20);
+        // findTringle(5, 3, 2);
+
+        // Task - 7
+        // Write a function that prints the result by using specific operation on given values.
+
+        // function Calculate(a, b, operator){
+        //     switch (operator){
+        //         case "add":
+        //             document.write(`${a + b}`);
+        //             console.log(add)
+        //             break;
+        //         case "sub":
+        //             document.write(a - b);
+        //             break;
+        //         case "mul":
+        //             document.write(a * b);
+        //             break;
+        //         case "div":
+        //             document.write(a / b);
+        //             break;
+        //         default:
+        //             document.write("Please enter the valid opearator")
+        //             break;
+        //     }
+        // }
+
+        // Calculate(10, 20, prompt("Enter the Operator"));
+
+        // Task - 8
+        // Write a function to find if the given char is an vowel?
+
+        // function findVowel(char){
+        //     char = char.toLowerCase();
+        //     if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u'){
+        //         document.write(`${char} is vowel.`)
+        //     }else{
+        //         document.write(`${char} is consonent.`)
+        //     }
+        // }
+        // findVowel('O')
+
+        // Tast - 9
+        // write a function to find if the given char is between "E to M" [uppercase].
+        // With Pattern
+
+        // function findChar(char){
+        //     if(char.charCodeAt(0) >= 69 && char.charCodeAt(0) <= 77){
+        //         document.write(`Your ${char} is the Range between E to M`)
+        //     }else{
+        //         document.write(`Your ${char} is not the Range between E to M`);
+        //     }  
+        // }
+        // findChar("e");
+
+        // Without Pattern
+
+        function findChar(char){
+            var regEx = /[E-M]/;
+            if(char.match(regEx)){
+                document.write(`Your char ${char} is in Range of E to M`);
+            }else{
+                document.write(`Your char ${char} is not in Range of E to M`);
+            }
+        }
+        findChar("l");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

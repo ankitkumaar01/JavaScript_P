@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyp</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyCard(){
+            var Card = document.getElementById("txtCard").value;
+            var CardImg = document.getElementById("CardImg");
+
+            if(Card.startsWith("9002")){
+                CardImg.src = 'Img/master.jpg';
+            }else{
+                CardImg.src = 'Img/visa.jpg';
+            }
+        }
+        
+        function VerifySkyp(){
+            var SkypIn = document.getElementById("txtSkyp").value;
+            var SkypLabel = document.getElementById("lblSkypIn");
+
+            if(SkypIn.endsWith("outlook.com")){
+                SkypLabel.innerHTML = "";
+            }else{
+                SkypLabel.innerHTML = "Invalid input";
+                SkypLabel.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <dl  class="m-3 w-25">
+            <dt>Credit Card Number</dt>
+            <dd class="input-group">
+                <input type="text" id="txtCard" onblur="VerifyCard()" maxlength="16" class="form-control">
+                <img src="" id="CardImg" class="input-group-text" width="80" height="45">
+            </dd>
+            <dt>Your Skyp Id</dt>
+            <dd><input type="text" id="txtSkyp" onblur="VerifySkyp()" class="form-control"></dd>
+            <dd id="lblSkypIn"></dd>
+        </dl>
+    </div>
+</body>
+</html>

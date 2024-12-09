@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            var products = [];
+            var http = new XMLHttpRequest();
+
+            http.open("get", "product.json", true)  
+            http.send()
+
+            http.onreadystatechange = function(){
+                if(http.readyState === 4){
+                    products = JSON.parse(http.responseText)
+                    
+                    products.map(function(data){
+                        var div = document.createElement("div");
+                        div.className = "row"
+                        console.log(data.image)
+                        div.innerHTML = `
+                              <div class="col-3">
+                              <img src="${data.image}" width="100%">
+                               </div>
+                               
+                          <div class="col-9">
+                            <h1>${data.title}</h1>
+                            <p><span class="bi bi-star-fill text-success">${data.rate.rating}</span> <span class="mx-1">${data.rate.rating}</span> <span class="mx-1">${data.rate.reviews}</span></p>
+                            <h6>${data.price}</h6>
+
+                            <ul>
+                                
+                            </ul>
+                         </div>
+                         `
+                         data.offers.map(function(offer){
+                            var li = document.createElement("li");
+                            li.innerHTML = offer;
+                            div.querySelector("ul").appendChild(li);
+                         })
+                         document.querySelector("section").appendChild(div)
+                    })
+                    
+                }
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <section>
+       
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.oncontextmenu = function(){
+            alert("Right Cursor are not allowed...")
+            return false;
+        }
+        document.onselectstart = function(){
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Account Number</dt>
+        <dd><input type="text" id="txtNumebr"></dd>
+        <dt>Verify Account Number</dt>
+        <dd><input type="text" onpaste="return false" id="txtVerify"></dd>
+    </dl>
+</body>
+</html>

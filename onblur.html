@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Blur</title>
+    <script>
+        function VerifyCode(){
+            var CodeText = document.getElementById("txtCode").value;
+            var lblError = document.getElementById("lblError");
+
+            if(CodeText.charAt(0) == "S"){
+                lblError.innerHTML = "";
+            }else {
+                lblError.innerHTML = "Code must strat with S Character".fontcolor("red");
+            }
+        }
+
+        function VerifyName(){
+            var userName = document.getElementById("txtName").value;
+            var firstCharCode = userName.charCodeAt(0);
+            var lblName = document.getElementById("lblName");
+
+            console.log(userName.charCodeAt(0));
+
+            if(firstCharCode>=65 && firstCharCode<=90) {
+                lblName.innerHTML = "";
+            } else {
+                lblName.innerHTML = "Name must start with uppercase letter".fontcolor('red');
+            }       
+        }
+
+        function VerifyEmail(){
+            var Email = document.getElementById("txtEmail").value;
+            var lblEmail = document.getElementById("lblEmail");
+            var AttheRate = Email.indexOf("@");
+            var LastDot = Email.lastIndexOf(".");
+
+            if(AttheRate < 3 || (LastDot - AttheRate)<3){
+                lblEmail.innerHTML = "Email is invalid".fontcolor("red");
+            }else {
+                lblEmail.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" onblur="VerifyName()" placeholder="Start with Uppercase letter" id="txtName"></dd>
+        <dd id="lblName"></dd>
+        <dt>IFSC Code</dt>
+        <dd><input type="text" onblur="VerifyCode()" maxlength="10" id="txtCode"></dd>
+        <dd id="lblError"></dd>
+        <dt>Email</dt>
+        <dd><input type="text" onblur="VerifyEmail()" id="txtEmail"></dd>
+        <dd id="lblEmail"></dd>
+    </dl>
+</body>
+</html>

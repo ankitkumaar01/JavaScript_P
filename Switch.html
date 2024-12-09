@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Statement</title>
+    <script>
+        // var n = parseInt(prompt("Enter the number"));
+        
+        // switch (n)
+        // {
+        //     case 1:
+        //         document.write("One");
+        //         break;
+        //     case 2:
+        //         document.write("Two" + " - Third is free");
+        //         // break;
+        //     case 3:
+        //         document.write("Three");
+        //         break;
+        //     case 4:
+        //         document.write("Four");
+        //         break;
+        //     default:
+        //         document.write("Please Enter Number between 1 to 4")
+        //         break;
+        // }
+
+        // ++++++++++++++++++++++++++++++++ FUNCTION SIWTCH STATEMENT +++++++++++++++++++++++++
+        // Note: Here you can use return as break
+
+        //   function f1(){
+        //     var n = parseInt(prompt("Enter the number"));
+        
+        //     switch (n)
+        //     {
+        //         case 1:
+        //             document.write("One");
+        //             break;
+        //         case 2:
+        //             document.write("Two");
+        //             break;
+        //         case 3:
+        //             document.write("Three");
+        //             break;
+        //         case 4:
+        //             document.write("Four");
+        //             break;
+        //         default:
+        //             document.write("Please Enter Number between 1 to 4")
+        //             break;
+        //     }
+        //   }
+        //   f1();
+
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++
+        // var choise = prompt("Enter Y OR N");
+
+        // switch (choise)
+        // {
+        //     case "y":
+        //     case "Y":
+        //         document.write("Y to continue");
+        //         break;
+        //     case "n":
+        //     case "N":
+        //         document.write("N to stop");
+        //         break;
+        //     default:
+        //         document.write("Please Enter Y and N");
+        //         break;
+        // }
+
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // var choise = prompt("Enter yes and no").toUpperCase();
+
+        // switch (choise)
+        // {
+        //     case "YES":
+        //         document.write("Continue with YES");
+        //         break;
+        //     case "NO":
+        //         document.write("Stop with NO");
+        //         break;
+        //     default:
+        //         document.write("Enter yes and no");
+        //         break;
+        // }
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // var n = parseInt(prompt("Enter Your Number"));
+
+        // switch(true)
+        // {
+        //     case (n >= 1 && n <= 30):
+        //         document.write(`${n} is between 1 to 30`)
+        //         break;
+        //     case (n >= 31 && n <= 50):
+        //         document.write(`${n} is between 31 to 50`)
+        //         break;
+        //     default:
+        //         document.write("Please Enter Number between 1 to 50");
+        //         break;
+        // }
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        function findValue(value, min, max){
+            if(value >= min && value <= max){
+                document.write(`<h2>Your value ${value} is in the Range of ${min} to ${max}</h2>`.fontcolor("green"));
+            }else{
+                document.write(`<h2>Your value ${value} is not in the Range of ${min} to ${max}</h2>`.fontcolor("red"));
+            }
+        }
+
+        findValue(200, 100, 300);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

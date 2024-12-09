@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <script>
+        // +++++++++++++++++++++++ Sample Example of Object
+        // var fruits = "Apple";
+        // var keys = Object.keys(fruits);
+
+        // console.log(keys);
+
+        // Second Example of object
+
+        // var tv = {
+        //     "Name": "LG TV",
+        //     "Price": "30500",
+        //     "Stock": 400,
+        //     "Cities": ["Delhi","Patna"],
+        //     "Rating": {"Rate": 4.9, "Count": 800}
+        // }
+        // tv.Price = 80000;
+        // tv.Stock = 900;
+        // document.write(`Name= ${tv.Name} <br> Price= ${tv.Price} <br> Stock= ${tv.Stock} <br> Cities= ${tv.Cities} <br> Rating= ${tv.Rating.Rate} [${tv.Rating.Count}]`);
+
+        // Name= LG TV   => **Output 
+        // Price= 30500
+        // Stock= 400
+        // Cities= Delhi,Patna
+        // Rating= 4.9 [800]
+
+
+        //  +++++++++++++++++++++ Product Print
+
+        // var product = {
+        //     Name: "TV",
+        //     Price: 22000,
+        //     QTY: 200,
+        //     Total: function(){
+        //         return this.Price * this.QTY;
+        //     },
+        //     Print: function(){
+        //         document.write(`Name=${this.Name} <br> Price= ${this.Price} <br> QTY = ${this.QTY} <br> Total= ${this.Total()}`)
+        //     }  
+        // }
+        // product.Name = prompt("Enter the Name");
+        // product.QTY = parseInt(prompt("Enter the Quantity"));
+        // product.Print();
+
+        // ++++++++++++++++++++++++++++++ Object.keys()
+        
+        // var student = {
+        //     Enroll: 848484,
+        //     Class: 12,
+        //     Hobby: "Singer",
+        //     Aim: "Doctor"
+        // }
+        // for(var key in student){
+        //     document.write(`${key}: ${student[key]}<br>`);
+        // }
+
+        // ++++++++++++++++++++++++++++++ Map Object Keys
+
+        // var student = {
+        //     Enroll: 848484,
+        //     Class: 12,
+        //     Hobby: "Singer",
+        //     Aim: "Doctor"
+        // }
+        // delete student.Enroll;
+        // delete student.Aim;
+
+        // Object.keys(student).map(function(key){
+        //     document.write(`${key}: ${student[key]} <br>`)
+        // })
+
+        // if("Grade" in student){
+        //     document.write(`${student.Grade} A+ Grade scored..`)
+        // }else{
+        //     document.write("<code>Grade is Not Available in Student.</code>")
+        // }
+
+        // +++++++++++++++++++++ typeOf() key
+
+        // var Items = {
+        //     Name: "Refigenerator",
+        //     Color: "Blue",
+        //     Price: 4099.99,
+        //     QTY: 900,
+        //     Stock: true
+        // }
+
+        // Object.keys(Items).map(function(key){
+        //     document.write(`Keys= ${key} Key Value= ${Items[key]}  typeOf = ${typeof Items[key]} <br>`)
+        // });
+
+        // +++++++++++++++++++++++++ hide key Symbol()
+
+        var product = {
+            [Id]: 9,
+            Name: "LG",
+            Price: 9499,
+            Stock: true
+        }
+
+        Object.keys(product).map(function(key){
+            // document.write(`${key}: ${product[key]}<br>`)
+            
+        })
+        // document.write(`Product Id = ${product[Id]}`);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

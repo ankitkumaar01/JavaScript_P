@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var categories = ["Fan", "Element", "Book"];
+
+        function GenerateClick(){
+            var list = document.createElement("li");
+            list.textContent = categories;
+
+            document.querySelector("ol").appendChild(list);
+
+            var option = document.createElement("option");
+            option.type = categories;
+            option.value = categories;
+
+            document.querySelector("select").appendChild(option);
+
+            var span = document.createElement("span");
+            span.innerHTML = `<a href="${categories}">${categories}</a>`;
+            document.querySelector("nav").appendChild(span);
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="GenerateClick">Generate</button>
+
+    <ol>
+
+    </ol>
+    <select>
+
+    </select>
+</body>
+</html>

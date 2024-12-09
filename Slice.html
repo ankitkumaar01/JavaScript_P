@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        // let greet = "Hello World ";
+        // let result = greet.slice(3);
+        // document.write(result);
+
+        // let greet = "Hello World ";
+        // let result = greet.substr(3);
+        // document.write(result);
+
+        // let greet = "Hello World ";
+        // let result = greet.substring(3);
+        // document.write(result);
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // var url = "https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_substring";
+        // var code = url.slice(url.indexOf("=") + 1);
+
+        // document.write(code);
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // var email = prompt("Enter Your Email Id");
+        // var email = "jhondoe@gmail.com";
+        // var id = email.substring(0, email.indexOf("@"));
+        
+        // var domain = email.substring(email.indexOf("@") + 1);
+        
+        // document.write(`Id = ${id} <br> Domain = ${domain}`);
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // Replace and ReplaceAll
+
+        // var msg = "I love cats. Cats are very easy to love. Cats are very popular.";
+        
+        // document.write(msg.replaceAll("Cats",'<b>Dogs</b>'));
+        // document.write(msg.replaceAll("cats","<b>dogs</b>"));
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++44
+        // trim()
+        
+        // var greet = "  Welcome     Home    ";
+        // var result = greet.trim();
+        // document.write(result);
+
+        // trimStart()
+
+        // var text = "  Love This One";
+        // var result = text.trimStart();
+
+        // // document.write(result);
+        // document.write(`Total Text = ${text.length} <br> TotalWord = ${result.length}`);
+
+        //trimend()
+
+        // var text = "From Delhi...   "
+        // var result = text.trimEnd();
+
+        // document.write(`Total Length = ${text.length} <br> Total Endtrim = ${result.length}`)
+
+        // OTP TRIM()
+        
+        // var otp = prompt("Enter OTP");
+
+        // if(otp.trim() == "9645"){
+        //     document.write("Payment Success..");
+        // }else{
+        //     document.write("Invalid OTP");
+        // }
+
+        // Split()
+
+        // var contact = "Jhon = 94785646442, David = 9745451545";
+        // var detail = contact.split(',');
+        // var[Jhon, David] = detail;
+
+        // document.write(Jhon);
+
+        // Ex-2
+
+        // var text = "How are you doing?";
+        // var result = text.split(" ",3);
+
+        // document.write(result);
+
+        // Strng Match()
+        
+        function VerifyPassword(){
+            var Password = document.getElementById("txtPwd").value;
+            var lblPwd = document.getElementById("lblPwd");
+
+            var regExp = /(?=.*[A-Z])\w{4,15}/;
+
+            if(Password.match(regExp)){
+            lblPwd.innerHTML = "Strong Password".fontcolor("green");
+            }else if(Password.length < 4){
+                lblPwd.innerHTML = "Poor Password - min 4 char required".fontcolor("gold");
+            }else{
+                lblPwd.innerHTML = "Week Password - One UpperCase is required".fontcolor("red");
+            }
+        }
+
+        // var text = "+914578515452";
+        // var regExp = /\+91 \d{10}*/
+
+        // var result = text.match(regExp);
+        // document.write(result);
+
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="m-4 ">
+        <dt>Your Password</dt>
+        <dd><input type="password" id="txtPwd" onkeyup="VerifyPassword()" class="form-control"></dd>
+        <dd id="lblPwd"></dd>
+    </dl>
+</body>
+</html>

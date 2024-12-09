@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function InsertClick(...details){
+            var [obj, e, name, id, price, stock, cities, rating] = details;
+            document.write(`Button Id: ${obj.id}<br>X_Position: ${e.clientX}<br> Name: ${name}<br> Price:${price} <br>Cities: ${cities}<br>Rating: ${rating.rate}`) 
+        }
+    </script>
+</head>
+<body>
+    <button id="Insert" onclick="InsertClick(this, event, 'LG', 29, 5800.45, true, ['Delhi', 'Hyd'], {rate: 4.9})">Insert</button>
+</body>
+</html>

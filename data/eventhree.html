@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(e){
+            e.preventDefault();
+            alert("Form Data Submitted to Server")
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="SubmitClick(event)">
+        userName:
+        <input type="text" name="UserName">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

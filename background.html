@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function changeRed(){
+            let bgColor = document.querySelector("body");
+            bgColor.style.backgroundColor = "red";
+            document.getElementById("redBtn").textContent ="#2245S"
+              document.getElementById("yelloBtn").textContent = "Yellow"
+              document.getElementById("blackBtn").textContent = "Black"
+              document.getElementById("blueBtn").textContent = "Blue"
+            
+        }
+        function changeYello(){
+            let bgColor = document.querySelector("body");
+            bgColor.style.backgroundColor = "yellow";
+            document.getElementById("redBtn").textContent ="Red"
+            document.getElementById("yelloBtn").textContent = "#5678";
+            document.getElementById("blackBtn").textContent = "Black"
+            document.getElementById("blueBtn").textContent = "Blue"
+
+
+        }
+        function changeBlack(){
+            let bgColor = document.querySelector("body");
+            bgColor.style.backgroundColor = "#000";
+             document.getElementById("redBtn").textContent ="Red"
+              document.getElementById("yelloBtn").textContent = "Yellow"
+              document.getElementById("blackBtn").textContent = "#00000"
+              document.getElementById("blueBtn").textContent = "Blue";
+        }
+        function changeBlue(){
+            let bgColor = document.querySelector("body");
+            bgColor.style.backgroundColor = "blue";
+             document.getElementById("redBtn").textContent ="Red"
+              document.getElementById("yelloBtn").textContent = "Yellow"
+              document.getElementById("blackBtn").textContent = "Black"
+              document.getElementById("blueBtn").textContent = "#78412"
+        }
+    </script>
+   
+</head>
+<body class=" d-flex flex-column justify-content-center align-items-center" style="height: 100vh;"> 
+    <div class="btn-container"> 
+        <button class="btn btn-danger" onclick="changeRed() " id="redBtn">red</button>
+        <button class="btn btn-warning" onclick="changeYello()"  id="yelloBtn">Yello</button>
+        <button class="btn btn-dark" onclick="changeBlack()"  id="blackBtn">Black</button>
+        <button class="btn btn-primary" onclick="changeBlue()"  id="blueBtn"> blue</button>
+
+    </div>
+    
+</body>
+</html>

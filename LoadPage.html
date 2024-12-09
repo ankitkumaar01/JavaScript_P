@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Page</title>
+    <script type="text/javascript">
+        function LoadPage(){
+            document.getElementById("poster").src = "../Javascript/Img/shoe1.jpg";
+            document.getElementById("btnRagister").value = "Ragister";
+            document.getElementById("btnLogin").value = "Login";
+        }
+
+    </script>
+</head>
+<body onload="LoadPage()">
+    <div>
+        <img width="200" id="poster" name="poster" height="200" border-1>
+    </div>  
+    <div>
+        <form name="frmRagister">
+            <h3>Ragister</h3>
+            <div><input type="text" placeholder="Your mobile">
+                <input type="email" placeholder="Your email">
+                <input type="button" name="bntRagister" id="bntRagister">
+            </div>
+            <div name="ftmLogin">
+                <h3>Login</h3>
+                <input type="text" placeholder="User Id">
+                <input type="password" placeholder="Password">
+                <input type="button" name="btnLogin" id="btnLogin">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SingIN</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var flag = "";
+        function ContinueClick(){
+            var UserName = document.getElementById("txtId").value;
+            var Error_Id = document.getElementById("Error_Id");
+
+            if(UserName === "ankitkumar@gmail.com"){
+                flag = `Email Successful with Email ${UserName} - OTP Sent Your Email`
+                document.getElementById("User_container").style.display = "none";
+                document.getElementById("Login_container").style.display = "block";
+                console.log(flag)
+            }else if(UserName === "7061745136"){
+                flag = `Mobile Number Successful with No .${UserName} - OTP Sent Your Mobile`
+                document.getElementById("User_container").style.display = "none";
+                document.getElementById("Login_container").style.display = "block";
+            }else{
+                Error_Id.innerHTML = `${UserName} does't exits`;
+            }
+        }
+
+        function LoginClick(){
+            var Pwd = document.getElementById("txtPwd").value;
+            if(Pwd === "ankit"){
+                document.write(`<h1>${flag}</h1>`);
+            }else{
+                document.getElementById("Pwd_id").innerHTML = "Invalid Password".fontcolor("red");
+            }
+        }
+    </script>
+</head>
+<body class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div>
+        <h3>SingIn</h3>
+        <div id="User_container">
+            <label class="form-label fw-bold">Enter Your Email or Mobile</label>
+            <div>
+                <input type="text" id="txtId" class="form-control">
+                <div id="Error_Id" class="text-danger"></div>
+            </div>
+            <div>
+                <button onclick="ContinueClick()" class="btn btn-warning w-100 mt-4">Continue</button>
+            </div>
+        </div>
+
+        <div id="Login_container" style="display: none;">
+            <label class="form-label fw-bold">Password</label>
+            <div>
+                <input type="password" id="txtPwd" class="form-control">
+                <div id="Pwd_id"></div>
+            </div>
+            <div>
+                <button onclick="LoginClick()" class="btn btn-warning w-100 mt-4">Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

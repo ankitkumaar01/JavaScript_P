@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <script>
+        function CalculateClick(){
+            var Height = parseFloat(document.getElementById("txtHeight").value);
+            var Weight = parseFloat(document.getElementById("txtWeight").value); 
+
+            var BMI = (Weight / Math.pow(Height / 100, 2));
+            BMI = BMI.toFixed(2);
+
+            document.getElementById("lblResult").innerHTML = `Your BMI Is ${BMI}`;
+        }
+    </script>
+
+</head>
+<body class="container-fluid bg-secondary d-flex justify-content-center mt-5">
+    <div class="bg-light w-50 p-4 rounded-4" style="height: 400px;">
+        <div class="h4 text-center text-info fw-bold">BMI CALCULATOR</div>
+        <div class="row m-4 text-center" style="padding-top: 30px; color: rgb(42, 40, 44); font-weight: 600;">
+            <div class="col">
+                <label>HEIGHT</label>
+                <input type="text" id="txtHeight" size="10" placeholder="height in cm"> CM
+            </div>
+
+            <div class="col">
+                <label>WEIGHT</label>
+                <input type="text" id="txtWeight" size="10" placeholder="weight in kg"> KG
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 145px;">
+            <div class="col text-center">
+                <button onclick="CalculateClick()" class="btn btn-warning">CALCULATOR</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="lblResult" class="text-center text-success fs-2 mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

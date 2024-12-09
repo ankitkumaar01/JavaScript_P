@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forward Jump</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyCard(){
+            let card = document.getElementById("txtCard").value;
+
+            if(card === "0998877654321339"){
+                document.getElementById("txtCvv").disabled = false;
+            }
+            console.log(card)
+        }
+        function VerifyCvv(){
+            let Cvv = document.getElementById("txtCvv").value;
+
+            if(Cvv === "9654"){
+                document.getElementById("Expriry").disabled = false;
+            }
+            console.log(Cvv)
+        }
+
+        function VerifyExpiry(){
+            let Expriry = document.getElementById("Expriry").value;
+            if(Expriry === "2025"){
+                document.querySelector("button").disabled = false;
+            }
+            console.log(Expriry)
+        }
+    </script>
+</head>
+<body class="container">
+    <dl>
+        <dt>Card</dt>
+        <dd><input type="text" id="txtCard" onblur="VerifyCard()"></dd>
+        <dt>Cvv</dt>
+        <dd><input disabled type="text" id="txtCvv" onblur="VerifyCvv()"></dd>
+        <dd><select disabled id="Expriry" onchange="VerifyExpiry()">
+            <option>Select Expriry</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+        </select></dd>
+    </dl>
+    <button class="btn btn-primary" disabled>Pay</button>
+</body>
+</html>

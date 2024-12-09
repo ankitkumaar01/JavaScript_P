@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // try{
+        //     var a = parseInt(prompt("Enter the Number - 1"));
+        //     var b = parseInt(prompt("Enter the Number - 2"));
+
+        //     if(b === 0){
+        //         throw "Can't divied by zero..<br>"
+        //     }
+        //     if(b > a){
+        //         throw "Can't divied by larger number..<br>"
+        //     }
+        //     var c = a/b;
+        //     document.write(`Division= ${c} <br>`);
+        // } catch(error){
+        //         document.write(error);
+        //     }
+        //     finally{
+        //         document.write("Program End..")
+        //     }
+
+        // +++++++++++++++++++++++ Password Checker
+
+        // var password = prompt("Enter the password");
+
+        // var result;
+
+        // if(password === "Mother"){
+        //     result = function(){
+        //         document.write("Login Successful..")
+        //     }
+        // }else{
+        //     result = function(){
+        //         document.write("Invalid Password");
+        //     }
+        // }
+        //  result(); 
+
+        // ++++++++++++++++++++++ Function Declaration
+
+        // function PrintNumber(num){
+        //     for(var i = 1; i<= num; i++){
+        //         document.write(i + "<br>")
+        //     }
+        // }
+        // PrintNumber(9);
+        // PrintNumber(7)
+
+        // EX----------
+
+        // function PrintCollection(collection){
+        //     collection.map(function(value, key){
+        //         document.write(`[${key}] ${value} <br>`)
+        //     })
+        // }
+        // PrintCollection(["A", "B", "C", "D", "E"]);
+
+        // Ex-----------
+
+        // function CaptFirstWord(str){
+        //     document.write(`${str.charAt(0).toUpperCase()}${str.slice(1).toLowerCase()}`)
+        // }
+        // CaptFirstWord("lEArn JaVAScrIpt");
+
+        // Ex------------
+
+        function FirstCap(str){
+            var words = str.split(" ");
+            words.map(function(word){
+                console.log(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+            })
+            console.log(words)
+        }
+        FirstCap("wElCome tO jVAscriPt");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes Rotate{
+            from{
+                transform: rotate(0deg) scale(1);
+            }
+            to{
+                transform: rotate(360deg) scale(1.5);
+            }
+        }
+        img{
+            animation-name: Rotate;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    </style>
+
+    <script>
+        function Fast(){
+            var Img = document.querySelector("img");
+            Img.style.animationName = "Rotate";
+            Img.style.animationDuration = '4s';
+            Img.style.animationIterationCount = "infinite"
+            Img.style.animationTimingFunction = 'linear';
+        }
+        function Slow(){
+            var Img = document.querySelector("img");
+            Img.style.animationName = "Rotate";
+            Img.style.animationDuration = '10s';
+            Img.style.animationIterationCount = "infinite"
+            Img.style.animationTimingFunction = 'linear';
+        }
+    </script>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <img onmouseover="Fast()" onmouseout="Slow()" src="../Img/pngwing.com.png" width="300" height="300">
+</body>
+</html>

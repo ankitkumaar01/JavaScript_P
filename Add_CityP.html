@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Addition</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="">
+
+        var cities = ["Punjab", "Delhi"];
+
+        function LoadCities(){
+            document.getElementById("1Cities").innerHTML = "";
+            cities.map(function(city){
+                var option = document.createElement("option");
+                option.text = city;
+                option.value = city;
+                document.getElementById("1Cities").appendChild(option);
+            })
+            document.getElementById("lblCount").innerHTML = `Total Number of Cities: ${cities.length}`;
+        }
+
+        function AddClick(){
+            var cityName = document.getElementById("txtName").value;
+            if(cities.indexOf(cityName) === -1){
+                cities.push(cityName);
+                alert(`${cityName} Added to list`);
+                LoadCities();
+                document.getElementById("txtName").value = "";
+            }else{
+                alert(`${cityName} exists`);
+            }
+        }
+
+        function SortAsc(){
+            cities.sort();
+            LoadCities();
+        }
+
+        function SortDsc(){
+            cities.sort();
+            cities.reverse();
+            LoadCities();
+        }
+
+        function DeleteClick(){
+            var selectCity = document.getElementById("1Cities").value;
+            var selectdIndex = cities.indexOf(selectCity);
+            var flag = confirm(`Are you Sure?\nWant to delete ${selectCity}`);
+            if(flag === true){
+                cities.splice(selectdIndex, 1);
+                alert(`${selectCity} Deleted`);
+                LoadCities();
+            }
+        }
+
+        function ClearClick(){
+            cities.length = 0;
+            LoadCities();
+        }
+
+        function EditClick(){
+            var selectedCity = document.getElementById("1Cities").value;
+            document.getElementById("txtEditName").value = selectedCity;
+        }
+
+        function SaveClick(){
+            var newCityName = document.getElementById("txtEditName").value;
+            var selectedCity = document.getElementById("1Cities").value;
+            var selectedIndex = cities.indexOf(selectedCity);
+            cities[selectedIndex] = newCityName;
+            LoadCities();
+        }
+
+
+    </script>
+</head>
+<body class="container-fluid bg-dark p-4" onload="LoadCities()">
+    <div class="bg-light p-4">
+        <div class="w-25">
+            <div class="h3">Add City</div>
+            <div class="input-group">
+                <input type="text" id="txtName" placeholder="New city name" class="form-control">
+                <button onclick="AddClick()" class="btn btn-primary">Add</button>
+            </div>
+            <div class="my-4">
+                <div class="my-2">
+                    <button onclick="SortAsc()" class="btn btn-dark bi bi-sort-alpha-down"></button>
+                    <button onclick="SortDsc()" class="btn btn-dark bi bi-sort-alpha-up ms-2"></button>
+                </div>
+                <select class="form-select" id="1Cities" size="3">
+
+                </select>
+                <div>
+                    <label id="lblCount" class="fw-bold"></label>
+                </div>
+                <div class="my-2">
+                    <button onclick="DeleteClick()" class="btn btn-danger bi-bi-trash">Delete</button>
+                    <button onclick="EditClick()" data-bs-toggle="modal" data-bs-target="#edit" class="btn btn-warning bi bi-pen">Edit</button>
+                    <div class="modal fade" id="edit">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Edit City</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" class="form-control" id="txtEditName">
+                                </div>
+                                <div class="modal-footer">
+                                    <button onclick="SaveClick()" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+                                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="ClearClick()" class="btn btn-danger bi bi-trash-fill">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

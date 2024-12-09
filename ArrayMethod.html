@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Method</title>
+    <script>
+        //++++++++++++++++++++ for Of
+
+        // var items = ["Laptop", "Computer", "Mouse", "PenDrive", "Memory"];
+
+        // for(var values of items){
+        //     document.write(values + "<br>");
+        // }
+
+        // +++++++++++++++++++ for in
+
+        // var ElectronicItem = ["Fan", "Bulb", "Ac", "TV", "Computer"];
+
+        // for(var properties in ElectronicItem){
+        //     document.write(`[${properties}] ${items[properties]} <br>`);
+        // }
+
+        // Create Elemment
+            // function uploadClick(){
+            //     document.querySelector("figure").innerHTML = "";
+            //     var pic = document.createElement("img");
+            //     pic.src = "Img/shoe1.jpg";
+            //     pic.width = '200';
+            //     pic.height = "200";
+
+            //     document.querySelector("figure").appendChild(pic);
+            // }
+
+            // function bodyload(){
+            //     var heading = document.createElement("h1");
+            //     heading.innerHTML = "Welcome to Shoes World";
+
+            //     document.querySelector('body').appendChild(heading);
+            // }
+
+            // +++++++++++++ Generate 
+
+            // function GenerateClick(){
+            //     document.getElementById("container").innerHTML = "";
+            //     var ol = document.createElement("ol");
+            //     ol.type = "a";
+
+            //     var list1 = document.createElement("li");
+            //     var list2 = document.createElement("li");
+
+            //     list1.innerHTML = "Hello";
+            //     list2.innerHTML = "India";
+
+            //     ol.appendChild(list1);
+            //     ol.appendChild(list2);
+
+            //     document.getElementById("container").appendChild(ol);
+
+            //     var title = document.createElement("h2");
+            //     title.innerHTML = "A Generate Element Examples";
+
+            //     document.getElementById("container").appendChild(title)
+            // }
+
+            // function bodyload(){
+            //     var title = document.createElement("h1");
+            //     title.innerHTML = "A Generate Element Examples"
+
+            //     document.querySelector("body").appendChild(title);
+            // }
+
+            // +++++++++++++++++++++++++++++++++++++++++
+
+            // function GenerateClick(){
+
+            //     document.getElementById("container").innerHTML = "";
+
+            //     var table = document.createElement("table");
+            //     table.border = "1";
+
+            //     var thead = document.createElement("thead");
+            //     var tbody = document.createElement("tbody");
+
+            //     var tr_for_head = document.createElement("tr");
+            //     var tr_for_body = document.createElement("tr");
+
+            //     var th = document.createElement("th");
+            //     var td = document.createElement("td");
+
+            //     th.innerHTML = "Name";
+            //     td.innerHTML = "Jhon Doe";
+
+            //     tr_for_head.appendChild(th);
+            //     tr_for_body.appendChild(td);
+
+            //     thead.appendChild(tr_for_head);
+            //     tbody.appendChild(tr_for_body);
+
+            //     table.appendChild(thead);
+            //     table.appendChild(tbody);
+
+            //     document.getElementById("container").appendChild(table);
+
+            //     var title = document.createElement("h2");
+            //     title.innerHTML = "It's a tabel Generate Button"
+
+            //     document.getElementById("container").appendChild(title)
+                
+            // }
+
+
+            // ++++++++++++++++++++++++++++++++++++
+
+            var categories = ["Phone", "FootWear", "Clothes", "Electronics"]
+
+            function GenerateClick(){
+                    document.querySelector("select").innerHTML = "";
+                    document.querySelector("ol").innerHTML = "";
+                    document.querySelector("ul").innerHTML = "";
+                    document.querySelector("nav").innerHTML = "";
+                    
+                categories.map(function(category){
+                    
+                    var li = document.createElement("li");
+                    li.innerHTML = category;
+                    document.querySelector("ol").appendChild(li);
+
+                    var option = document.createElement("option");
+                    option.text = category;
+                    option.value= category; 
+
+                    document.querySelector("select").appendChild(option);
+
+                    var span = document.createElement("span");
+                    span.innerHTML = `<a href= "#${category}"> ${category}</a>`
+                    document.querySelector("nav").appendChild(span);
+
+                    var list = document.createElement("li");
+                    
+                    var input = document.createElement("input");
+                    input.type = "checkbox";
+                    input.value = category;
+
+                    var label = document.createElement("label");
+                    label.innerHTML = category;
+
+                    list.appendChild(input);
+                    list.appendChild(label);
+
+                    document.querySelector("ul").appendChild(list);
+                    console.log("hello")
+                })
+            }
+        
+    </script>
+</head>
+<body>
+    <!-- <button onclick="uploadClick()">Upload</button>
+    <figure>
+        
+    </figure> -->
+
+    <button onclick="GenerateClick()">Generate</button>
+    <ol>
+
+    </ol>
+    <select>
+
+    </select>
+    <br>
+
+    <nav>
+
+    </nav>
+
+    <ul>
+
+    </ul>
+    <div id="container">
+        
+    </div>
+</body>
+</html>

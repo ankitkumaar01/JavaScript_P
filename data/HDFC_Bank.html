@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class HDFC_BANK_Version1{
+            personal = "Personal Banking Loans <br>";
+            print(){
+                document.write(`${this.personal}`)
+            }
+        }
+        class HDFC_BANK_Version_2 extends HDFC_BANK_Version1{
+            NRI = "NRI BANKING SERVICES <br>"
+            print(){
+                super.print();
+                document.write(`${this.NRI}`)
+            }
+        }
+        class HDFC_BANK_Version_3 extends HDFC_BANK_Version_2{
+            Loans = "Personal Loans ans House Loans <br>";
+            print(){
+                super.print();
+                document.write(`${this.Loans}`)
+            }
+        }
+
+        function InstallClick(){
+            switch(document.querySelector("select").value)
+            {
+                case "var1":
+                    document.write("<h2>Version-1 Installed</h2>");
+                    let obj1 = new HDFC_BANK_Version1();
+                    obj1.print()
+                    break;
+                case "var2":
+                    document.write("<h2>Version-2 Installed</h2>")
+                    let obj2 = new HDFC_BANK_Version_2();
+                    obj2.print()
+                    break;
+                case "var3":
+                    document.write("<h2>Version-3 Installed</h2>")
+                    let obj3 = new HDFC_BANK_Version_3();
+                    obj3.print()
+                    break;
+                default:
+                    document.write("Please Select Version Services..");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <h3>INSTALL HDFC BANK APP</h3>
+        <dt>Select Version</dt>
+        <dd>
+            <select>
+                <option value="Version">Choose Version</option>
+                <option value="var1">Version-1[2023]</option>
+                <option value="var2">Version-2[2024]</option>
+                <option value="var3">Version-3[Latest]</option>
+            </select>
+            <button onclick="InstallClick()">Install</button>
+        </dd>
+    </dl>
+</body>
+</html>

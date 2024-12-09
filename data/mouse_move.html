@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SetPosition(e){
+            var chakra = document.getElementById("chakra");
+            chakra.style.position = "fixed";
+            chakra.style.left = e.ClientX + "px";
+            chakra.style.top = e.ClientY + "px";
+        }
+    </script>
+</head>
+<body onmousemove="SetPosition(event)">
+    <div style="height: 1000px;">Move mouse pointer to test</div>
+    <img id="chakra" src="../Img/pngwing.com.png" width="50" height="50">
+</body>
+</html>

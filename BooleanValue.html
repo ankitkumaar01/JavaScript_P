@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean Value</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        // var stock = true;
+        // if(stock == true){
+        //     document.write("Available");
+        // }else{
+        //     document.write("Out of Stock..");
+        // }
+
+        function CheckBox(){
+            var checkbox = document.getElementById("checkId");
+            var lblStock = document.getElementById("lblStock");
+            
+           lblStock.textContent  = (lblStock.textContent === "Out Of Stock")?"Available":"Out Of Stock";
+        }
+
+        function ClickBtn(){
+            var Button = document.getElementById("toggleBtn");
+            var lblIcon = document.getElementById("lblIcon");
+            var textContainer = document.getElementById("textContainer");
+           
+
+            lblIcon.className = (lblIcon.className === "bi-dash")?"bi-plus":"bi-dash";
+            // console.log(lblIcon.className);
+            textContainer.className = (textContainer.className === "d-none")?"d-block":"d-none"
+            // console.log(textContainer.className);
+        }
+        
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="form-switch m-5">
+        <input type="checkbox" id="checkId" onchange="CheckBox()" class="form-check-input"><label for="checkId" id="lblStock" class="form-check-label mx-2">Out Of Stock</label>
+    </div>
+
+    <div id="toggleBtn" onclick="ClickBtn()" class="btn btn-dark d-flex justify-content-between text-white">
+        <label>Tell Me something about America.</label>
+        <label for="toggleBtn" id="lblIcon" class="bi bi-plus"></label>
+    </div>
+    <div class="d-none" id="textContainer">
+     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum officia beatae, est nulla provident sint voluptas fugiat atque quibusdam id. Obcaecati, atque accusamus. Deleniti, repudiandae veritatis. Distinctio doloremque enim libero ut, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, iste? Minima ullam dolores distinctio quisquam fuga, magni minus laborum, hic atque, facilis consequatur rem quod. Est commodi amet in voluptates dolorem animi accusantium reprehenderit, consequuntur fugiat quod esse accusamus aliquid sit ad, delectus non nihil repudiandae hic quaerat itaque nesciunt totam. Nam laborum incidunt deleniti excepturi ex accusantium saepe exercitationem voluptatem explicabo consectetur mollitia illo veritatis accusamus iusto distinctio, ad in vero cumque eius consequatur aliquam vitae qui quae dolores? Eius nostrum aperiam obcaecati, dolorem quam at, deleniti ab molestiae ipsa vero nobis iure atque qui dolorum iste quaerat? Quasi.  nam ducimus explicabo veritatis neque architecto. Aperiam nam vitae Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, tenetur explicabo dolores nostrum saepe quia exercitationem! Id, beatae dicta voluptate ipsam fugiat provident, eos quasi ad similique asperiores saepe? Repudiandae beatae doloremque aliquam ea sunt et incidunt quia laborum dolor blanditiis eum quos qui eius optio laboriosam molestiae eaque eveniet ipsam nostrum delectus, iure, laudantium quae hic. Blanditiis velit cupiditate atque autem sit sunt molestiae amet eos ab natus corrupti, optio adipisci corporis consequatur temporibus ipsam error at quod. Vero ea tempore dolorum sunt eius neque delectus unde magnam, amet, voluptatum sit blanditiis soluta, nam distinctio. Aspernatur in velit est. lorem200
+    </div>
+</body>
+</html>

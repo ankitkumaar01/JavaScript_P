@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function GetDatails(msg){
+            document.querySelector("h2").innerHTML = msg;
+            // console.log(GetDatails(msg))
+        }
+        
+    </script>
+</head>
+<body>
+    <img ontouchstart="GetDatails('80% Off on kids fashion clothes.')" onclick="GetDatails('80% Off on kids fashion clothes.')" src="../Img/kids-fashion.jpg" width="200" height="200">    
+    <img ontouchstart="GetDatails('50% Off on Men fashion clothes.')" onclick="GetDatails('50% Off on Men fashion clothes.')" src="../Img/men-fashion.jpg" width="200" height="200">
+    <img ontouchstart="GetDatails('60% Off on womenfashion clothes.')" onclick="GetDatails('60% Off on women fashion clothes.')" src="../Img/women-fashion.jpg" width="200" height="200">
+    <h2></h2>
+</body>
+</html>

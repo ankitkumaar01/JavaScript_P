@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var data = new Map();
+        // data.set("Hello", "Welcome to America");
+        // data.set(1, {Name: "America", Capital: "DC"})
+        // data.set("City", ["NewYork", "Cicargo"]);
+
+        // Object.keys(data.get(1)).map(function(cities){
+        //     document.write(`${cities}: ${data.get(1) [cities]} <br>`);
+        // });
+        // // document.write(data.size);
+        // console.log(data.has())
+
+        // for(var data of data.entries()){
+        //     document.write(data + "<br>");
+        // }
+
+        // +++++++++++++++++++++++++ data 
+
+        // let today = new Date()
+        // console.log(today);
+
+        // let makeDate = new Date("2024-03-12 15:54:28");
+        // document.write(makeDate.toLocaleString());
+        let makeDate = new Date("2024-03-12 15:54:28");
+
+        var weekend = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+        document.write(`${weekend[makeDate.getDay()]}  ${makeDate.getDate()} - ${months[makeDate.getMonth()]} ${makeDate.getFullYear()}`);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

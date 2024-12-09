@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Javascript - Form Input</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <script type="text/javascript">
+            function sumitClick(){
+                document.getElementById("lblProduct").innerText = document.getElementById("txtProduct").value;
+                document.getElementById("lblName").innerText = document.getElementById("txtName").value;
+                document.getElementById("lblPrice").innerText = document.getElementById("txtPrice").value;
+                document.getElementById("lblCity").innerText = document.getElementById("1stCites").value;
+
+                stockCheckbox = document.getElementById("chkStock");
+                stock = "";
+
+                if(stockCheckbox.checked){
+                    stock = "Available";
+                }else{
+                    stock = "Out Of Stock";
+                }
+
+                document.getElementById("lblStock").innerHTML = stock;
+
+                document.getElementById("Products").style.display = "none";
+            }
+
+            function submit(){
+                document.getElementById("Products").style.display = "block";
+            }
+
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center"  style="height: 100vh; background: linear-gradient(rgb(240, 82, 195), rgb(153, 68, 232)); background-repeat: no-repeat;">
+    <div class="w-25 mt-4 border border-1 p-3" id="Products" style=" height: 70vh; border-radius: 10px; border-color: rgb(229, 232, 234);">
+        <h3>Ragister Products</h3>
+        <dl>
+            <dt>Product Id</dt>
+            <dd><input type="number" id="txtProduct" class="form-control"></dd>
+            <dt>Name</dt>
+            <dd><input type="text" id="txtName" class="form-control"></dd>
+            <dt>Price</dt>
+            <dd><input type="number" id="txtPrice" class="form-control"></dd>
+
+            <dt>City</dt>
+            <dd>
+                <select class="form-select" id="1stCites">
+                    <option class="text-secondary">Select One</option>
+                    <option>Mumbai</option>
+                    <option>Kolkata</option>
+                    <option>Hyderabad</option>
+                    <option>Delhi</option>
+                </select>
+            </dd>
+
+            <dt>Stock</dt>
+            <dd class="form-switch">
+                <input type="checkbox" id="chkStock" class="form-check-input">
+                 <label> Available</label>
+            </dd>
+        </dl>
+
+        <button onclick="sumitClick()" data-bs-toggle="modal" data-bs-target="#Content" class="btn btn-primary w-100">Submit</button>
+    </div>
+
+    <!--  ++++++++++++++++++++++++++++++++++++++++++ MODAL FORM HERE ++++++++++++++++++++++++++++++++++++++ -->
+
+    <div class="modal fade" id="Content">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(rgb(165, 37, 229), rgb(234, 66, 187)); color: #fff;">
+                    <h4>Product Details</h4>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body" style="background: linear-gradient(rgb(226, 231, 239), rgb(238, 233, 241));">
+                    <dl class="row">
+                        <dt class="col-3">Product Id</dt>
+                        <dd class="col-9" id="lblProduct"></dd>
+                        <dt class="col-3">Name</dt>
+                        <dd class="col-9" id="lblName"></dd>
+                        <dt class="col-3">Price</dt>
+                        <dd class="col-9" id="lblPrice"></dd>
+                        <dt class="col-3">City</dt>
+                        <dd class="col-9" id="lblCity"></dd>
+                        <dt class="col-3">Stock</dt>
+                        <dd class="col-9" id="lblStock"></dd>
+                    </dl>
+                </div>
+
+                <div class="modal-footer" style="background: linear-gradient(rgb(165, 37, 229), rgb(234, 66, 187)); color: #fff;">
+                    <button onclick="submit()" class="btn btn-warning" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
